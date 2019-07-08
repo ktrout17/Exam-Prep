@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aff_z.c                                            :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/08 19:49:07 by marvin            #+#    #+#             */
-/*   Updated: 2019/07/08 19:49:07 by marvin           ###   ########.fr       */
+/*   Created: 2019/07/08 20:32:36 by marvin            #+#    #+#             */
+/*   Updated: 2019/07/08 20:32:36 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-int     main(int argc, char *argv[])
+char    *ft_strcpy(char *s1, char *s2)
 {
-    int i;
+    int     i;
+    char    *str1;
+    char    *str2;
 
     i = 0;
-    if (argc != 2)
-        write(1, "z\n", 2);
-    else
+    str1 = (char *)s1;
+    str2 = (char *)s2;
+    while (s2)
     {
-        while (argv[1][i])
-        {
-            if (argv[1][i] == 'z')
-            {
-                write(1, "z", 1);
-                break;
-            }
-            i++;
-        }
-        write(1, "\n", 1);
+        str1[i] = str2[i];
+        i++;
     }
-    return (0);
+    str1[i] = '\0';
+    return (s1);
 }

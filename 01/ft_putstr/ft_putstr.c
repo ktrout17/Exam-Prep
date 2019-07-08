@@ -1,36 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aff_z.c                                            :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/08 19:49:07 by marvin            #+#    #+#             */
-/*   Updated: 2019/07/08 19:49:07 by marvin           ###   ########.fr       */
+/*   Created: 2019/07/08 20:25:56 by marvin            #+#    #+#             */
+/*   Updated: 2019/07/08 20:25:56 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int     main(int argc, char *argv[])
+void    ft_putstr(char *str)
 {
     int i;
 
     i = 0;
-    if (argc != 2)
-        write(1, "z\n", 2);
-    else
+    while (str[i])
     {
-        while (argv[1][i])
-        {
-            if (argv[1][i] == 'z')
-            {
-                write(1, "z", 1);
-                break;
-            }
-            i++;
-        }
-        write(1, "\n", 1);
+        write(1, &str[i], 1);
+        i++;
     }
-    return (0);
 }
