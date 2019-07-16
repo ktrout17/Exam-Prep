@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktrout <ktrout@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/08 14:56:03 by ktrout            #+#    #+#             */
-/*   Updated: 2019/07/08 14:58:57 by ktrout           ###   ########.fr       */
+/*   Created: 2019/07/16 06:43:58 by ktrout            #+#    #+#             */
+/*   Updated: 2019/07/16 06:47:00 by ktrout           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int     main(int argc, char *argv[])
+int     main(int argc, char **argv)
 {
     int i;
 

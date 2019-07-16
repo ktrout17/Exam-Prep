@@ -5,20 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktrout <ktrout@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/09 10:21:48 by ktrout            #+#    #+#             */
-/*   Updated: 2019/07/09 10:33:17 by ktrout           ###   ########.fr       */
+/*   Created: 2019/07/16 10:01:44 by ktrout            #+#    #+#             */
+/*   Updated: 2019/07/16 10:24:28 by ktrout           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int     main(int argc, char *argv[])
+int     main(int argc, char **argv)
 {
     int i;
     int cap;
     int uncap;
 
-    if (argc == 2)
+    if (argc > 1)
     {
         i = 0;
         if (argv[1][i] == ' ')

@@ -5,23 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktrout <ktrout@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/09 10:38:41 by ktrout            #+#    #+#             */
-/*   Updated: 2019/07/09 10:46:36 by ktrout           ###   ########.fr       */
+/*   Created: 2019/07/16 10:29:05 by ktrout            #+#    #+#             */
+/*   Updated: 2019/07/16 10:36:31 by ktrout           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int     main(int argc, char *argv[])
+int     main(int argc, char **argv)
 {
     int i;
     int letter;
 
-    if (argc == 2)
+    if (argc > 1)
     {
         i = 0;
-        if (argv[1][i] == ' ')
-            i++;
         while (argv[1][i])
         {
             letter = argv[1][i];

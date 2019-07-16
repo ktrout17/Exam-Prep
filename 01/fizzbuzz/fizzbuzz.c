@@ -1,36 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aff_z.c                                            :+:      :+:    :+:   */
+/*   fizzbuzz.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktrout <ktrout@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/16 06:53:59 by ktrout            #+#    #+#             */
-/*   Updated: 2019/07/16 06:57:29 by ktrout           ###   ########.fr       */
+/*   Created: 2019/07/16 16:30:48 by ktrout            #+#    #+#             */
+/*   Updated: 2019/07/16 16:51:05 by ktrout           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int     main(int argc, char **argv)
+void    ft_putnbr(int n)
 {
-    int i;
+    if (n >= 10)
+        ft_putnbr(n / 10);
+    n = (n % 10 + '0');
+    write(1, &n, 1);
+}
 
-    i = 0;
-    if (argc != 2)
-        write(1, "z\n", 2);
-    else
+int     main(void)
+{
+    int nbr;
+
+    nbr = 1;
+    while (nbr <= 100)
     {
-        while (argv[1][i])
-        {
-            if (argv[1][i] == 'z')
-            {
-                write(1, "z", 1);
-                break ;
-            }
-            i++;
-        }
+        if ((nbr % 3 == 0) && (nbr % 5 == 0))
+            write(1, "fizzbuzz", 8);
+        else if (nbr % 3 == 0)
+            write(1, "fizz", 4);
+        else if (nbr % 5 == 0)
+            write(1, "buzz", 4);
+        else 
+            ft_putnbr(nbr);
         write(1, "\n", 1);
+        nbr++;
     }
     return (0);
 }

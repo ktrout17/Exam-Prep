@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   repeat_alpha.c                                     :+:      :+:    :+:   */
+/*   repreat_alpha.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktrout <ktrout@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/09 08:54:42 by ktrout            #+#    #+#             */
-/*   Updated: 2019/07/09 09:19:36 by ktrout           ###   ########.fr       */
+/*   Created: 2019/07/16 07:27:34 by ktrout            #+#    #+#             */
+/*   Updated: 2019/07/16 07:39:40 by ktrout           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int     main(int argc, char *argv[])
+int     main(int argc, char **argv)
 {
     int i;
     int letter;
 
     i = 0;
-    if (argc == 2)
+    if (argc > 1)
     {
         while (argv[1][i])
         {
@@ -27,7 +27,7 @@ int     main(int argc, char *argv[])
             {
                 letter = argv[1][i] - 63;
                 while (--letter)
-                    write(1, &argv[1][i],1 );
+                    write(1, &argv[1][i], 1);
             }
             else if (argv[1][i] >= 'a' && argv[1][i] <= 'z')
             {
@@ -35,7 +35,7 @@ int     main(int argc, char *argv[])
                 while (--letter)
                     write(1, &argv[1][i], 1);
             }
-            else
+            else    
                 write(1, &argv[1][i], 1);
             i++;
         }

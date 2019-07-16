@@ -5,20 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktrout <ktrout@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/09 09:20:44 by ktrout            #+#    #+#             */
-/*   Updated: 2019/07/09 09:26:30 by ktrout           ###   ########.fr       */
+/*   Created: 2019/07/16 07:42:57 by ktrout            #+#    #+#             */
+/*   Updated: 2019/07/16 07:46:39 by ktrout           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int     main(int argc, char *argv[])
+int     main(int argc, char **argv)
 {
     int i;
 
-    if (argc == 2)
+    i = 0;
+    if (argc > 1)
     {
-        i = 0;
         while (argv[1][i])
             i++;
         while (i)

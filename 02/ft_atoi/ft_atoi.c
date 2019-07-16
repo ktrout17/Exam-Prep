@@ -5,12 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktrout <ktrout@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/09 11:02:28 by ktrout            #+#    #+#             */
-/*   Updated: 2019/07/09 12:14:15 by ktrout           ###   ########.fr       */
+/*   Created: 2019/07/16 13:28:13 by ktrout            #+#    #+#             */
+/*   Updated: 2019/07/16 16:02:22 by ktrout           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 int     ft_atoi(const char *str)
 {
@@ -21,10 +22,9 @@ int     ft_atoi(const char *str)
     i = 0;
     res = 0;
     neg = 1;
-
-    while ((str[i] == ' ' || str[i] == '\n' || str[i] == '\t' || str[i] == '\r'
-        || str[i] == '\v') && str[i])
-            i++;
+    while ((str[i] == ' ' || str[i] == '\n' || str[i] == '\t' || str[i] == '\v'
+        || str[i] == '\r') && str[i])
+        i++;
     if (str[i] == '+' || str[i] == '-')
     {
         if (str[i] == '-')
@@ -37,4 +37,12 @@ int     ft_atoi(const char *str)
         i++;
     }
     return (res * neg);
+}
+
+int     main(void)
+{
+    char str[] = " -156424";
+    printf("%d\n", ft_atoi(str));
+    printf("%d", atoi(str));
+    return (0);
 }
