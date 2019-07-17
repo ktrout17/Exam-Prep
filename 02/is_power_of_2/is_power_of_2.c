@@ -6,7 +6,7 @@
 /*   By: ktrout <ktrout@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/09 15:21:12 by ktrout            #+#    #+#             */
-/*   Updated: 2019/07/09 15:36:31 by ktrout           ###   ########.fr       */
+/*   Updated: 2019/07/17 08:31:27 by ktrout           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ int     is_power_of_2(unsigned int n)
         n = n / 2;
     if (n == 1)
         return (1);
-    else
+    else 
         return (0);
 }

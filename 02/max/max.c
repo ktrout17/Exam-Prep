@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*   max.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktrout <ktrout@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/09 12:31:31 by ktrout            #+#    #+#             */
-/*   Updated: 2019/07/17 08:16:03 by ktrout           ###   ########.fr       */
+/*   Created: 2019/07/17 08:56:32 by ktrout            #+#    #+#             */
+/*   Updated: 2019/07/17 09:08:19 by ktrout           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char    *ft_strrev(char *str)
+#include <stdio.h>
+
+int     max(int *tab, unsigned int len)
 {
     int i;
-    int len;
-    int temp;
+    int max_value;
 
-    len = 0;
-    while (str[len])
-        len++;
-    i = -1;
-    while (++i < --len)
+    if (!tab)
+        return (0);
+    i = 0;
+    while (len--)
     {
-        temp = str[i];
-        str[i] = str[len];
-        str[len] = temp;
+        if (tab[i] > tab[i + 1])
+            max_value = tab[i];
+        i++;
     }
-    return (str);
+    return (max_value);
 }

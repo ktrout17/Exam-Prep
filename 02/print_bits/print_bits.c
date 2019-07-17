@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*   print_bits.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktrout <ktrout@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/09 12:31:31 by ktrout            #+#    #+#             */
-/*   Updated: 2019/07/17 08:16:03 by ktrout           ###   ########.fr       */
+/*   Created: 2019/07/17 09:09:07 by ktrout            #+#    #+#             */
+/*   Updated: 2019/07/17 09:18:50 by ktrout           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char    *ft_strrev(char *str)
-{
-    int i;
-    int len;
-    int temp;
+#include <unistd.h>
 
-    len = 0;
-    while (str[len])
-        len++;
-    i = -1;
-    while (++i < --len)
-    {
-        temp = str[i];
-        str[i] = str[len];
-        str[len] = temp;
-    }
-    return (str);
+void    print_bits(unsigned char octet)
+{
+	int             i;
+	unsigned char bit;
+
+	i = 8;
+	while (i--)
+	{
+		bit = (octet >> i & 1) + '0';
+		write(1, &bit, 1);
+	}
 }
