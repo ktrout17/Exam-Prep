@@ -6,11 +6,10 @@
 /*   By: ktrout <ktrout@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/16 13:28:13 by ktrout            #+#    #+#             */
-/*   Updated: 2019/07/16 16:02:22 by ktrout           ###   ########.fr       */
+/*   Updated: 2019/07/24 08:58:18 by ktrout           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stdlib.h>
 
 int     ft_atoi(const char *str)
@@ -37,12 +36,4 @@ int     ft_atoi(const char *str)
         i++;
     }
     return (res * neg);
-}
-
-int     main(void)
-{
-    char str[] = " -156424";
-    printf("%d\n", ft_atoi(str));
-    printf("%d", atoi(str));
-    return (0);
 }

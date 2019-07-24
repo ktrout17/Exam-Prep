@@ -9,3 +9,12 @@ Reproduce exactly the behavior of the function strcspn
 The function should be prototyped as follows:
 
 size_t	ft_strcspn(const char *s, const char *reject);
+
+
+
+
+The strcspn() function spans the initial part of the null-terminated string s 
+as long as the characters from s do not occur in the null-terminated string reject 
+(it spans the complement of reject).  In other words, it computes the string array 
+index of the first character of s which is also in reject, else the index of the 
+first null character.

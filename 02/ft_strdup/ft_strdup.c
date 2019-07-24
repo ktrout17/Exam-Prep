@@ -6,13 +6,12 @@
 /*   By: ktrout <ktrout@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/09 12:21:02 by ktrout            #+#    #+#             */
-/*   Updated: 2019/07/09 12:30:31 by ktrout           ###   ########.fr       */
+/*   Updated: 2019/07/24 09:02:00 by ktrout           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <string.h>
-#include <stdio.h>
 
 char    *ft_strcpy(char *dest, const char *src)
 {
