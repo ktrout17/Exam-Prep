@@ -3,19 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ktrout <ktrout@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/24 08:37:35 by ktrout            #+#    #+#             */
-/*   Updated: 2019/07/24 08:53:28 by ktrout           ###   ########.fr       */
+/*   Updated: 2019/07/30 09:47:16 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		nbr_inbase(char c, int base)
+#include <stdio.h>
+
+int		nbr_inbase(char c , int base)
 {
-	if (base <= 10)
-		return ((c >= '0' && c <= '9'));
-	return ((c >= '0' && c <= '9') || (c >= 'A' && c <= ('A' + base - 10)) ||
-		(c >- 'a' && c <= ('a' + base - 10)));
+	if (base >= 10)
+		return (c >= '0' && c <= '9');
+	return ((c >= '0' && c <= 9) || (c <= 'A' && c <= ('A' + base - 10)) ||
+			(c >= 'a' && c <= ('a' + base - 10)));
 }
 
 int		ft_atoi_base(const char *str, int str_base)
@@ -29,10 +31,10 @@ int		ft_atoi_base(const char *str, int str_base)
 	i = 0;
 	nbr = 0;
 	neg = 1;
-	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\r' || str[i] == '\t'
-		|| str[i] == '\v' || str[i] == '\f')
-		i++;
-	if (str[i] == '+' || str[i] == '-')
+	while (str[i] && (str[i] == '\t' || str[i] == '\r' || str[i] == '\v' ||
+			str[i] == '\n' || str[i] == ' '))
+			i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
 			neg = -1;
@@ -42,11 +44,18 @@ int		ft_atoi_base(const char *str, int str_base)
 	{
 		if (str[i] >= 'A' && str[i] <= 'F')
 			nbr = (nbr * str_base) + (str[i] - 'A' + 10);
-		else if(str[i] >= 'a' && str[i] <= 'f')
-			nbr = (nbr * str_base) + (str[i] - 'a' + 10);
-		else
+		else if (str[i] >= 'a' && str[i] <= 'f')
+			nbr = (nbr * str_base) + ( str[i] - 'a' + 10);
+		else 
 			nbr = (nbr * str_base) + (str[i] - '0');
 		i++;
 	}
 	return (nbr * neg);
+}
+
+int		main(void)
+{
+	char str[] = "056462";
+	printf("%d", ft_atoi_base(str, 3));
+	return (0); 
 }
