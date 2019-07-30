@@ -6,11 +6,9 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/24 08:37:35 by ktrout            #+#    #+#             */
-/*   Updated: 2019/07/30 09:47:16 by marvin           ###   ########.fr       */
+/*   Updated: 2019/07/30 17:56:16 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int		nbr_inbase(char c , int base)
 {
@@ -51,11 +49,4 @@ int		ft_atoi_base(const char *str, int str_base)
 		i++;
 	}
 	return (nbr * neg);
-}
-
-int		main(void)
-{
-	char str[] = "056462";
-	printf("%d", ft_atoi_base(str, 3));
-	return (0); 
 }
