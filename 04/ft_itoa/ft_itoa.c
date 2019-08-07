@@ -6,12 +6,11 @@
 /*   By: ktrout <ktrout@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/01 16:43:16 by ktrout            #+#    #+#             */
-/*   Updated: 2019/08/02 10:59:58 by ktrout           ###   ########.fr       */
+/*   Updated: 2019/08/07 08:54:47 by ktrout           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 
 int		ft_itoa_len(int n)
 {
@@ -57,10 +56,4 @@ char	*ft_itoa(int nbr)
 		len--;
 	}
 	return (res);
-}
-
-int		main(void)
-{
-	printf("%s", ft_itoa(-98684));
-	return (0);
 }

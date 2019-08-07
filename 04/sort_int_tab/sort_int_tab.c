@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_list.c                                        :+:      :+:    :+:   */
+/*   sort_int_tab.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktrout <ktrout@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/05 11:16:53 by ktrout            #+#    #+#             */
-/*   Updated: 2019/08/07 08:55:19 by ktrout           ###   ########.fr       */
+/*   Created: 2019/08/07 08:56:12 by ktrout            #+#    #+#             */
+/*   Updated: 2019/08/07 08:56:18 by ktrout           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "list.h"
-#include <unistd.h>
-
-t_list	*sort_list(t_list* lst, int (*cmp)(int, int))
+void	sort_int_tab(int *tab, unsigned int size)
 {
-	int 	overflow;
-	t_list	*temp;
+	int				tmp;
+	unsigned int 	i;
+	unsigned int 	j;
 
-	temp = lst;
-	while (lst->next != NULL)
+	i = 0;
+	while (i < size - 1)
 	{
-		if(((cmp)(lst->next, lst->data->next)) == 0)
+		j = i;
+		while (j < size)
 		{
-			overflow = lst->data;
-			lst->data = lst->next->data;
-			lst->next->data = overflow;
-			lst = overflow;
+			if (tab[i] > tab[j])
+			{
+				temp = tab[i];
+				tab[i] = tab[j];
+				tab[j] = tmp;
+			}
+			j += 1;
 		}
-		else 
-			lst = lst->next;
+		i += 1;
 	}
-	lst = temp;
-	return (lst);
 }
