@@ -6,7 +6,7 @@
 /*   By: ktrout <ktrout@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/12 10:04:59 by ktrout            #+#    #+#             */
-/*   Updated: 2019/08/13 13:04:13 by ktrout           ###   ########.fr       */
+/*   Updated: 2019/08/20 07:14:49 by ktrout           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_itoa_base(int value, int base)
 
 	if (value == 0)
 		return (0);
+	if (value == -2147483648)
+		return ("-2147483648");
 	base_str = "0123456789ABCDEF";
 	len = 0;
 	n = value;
