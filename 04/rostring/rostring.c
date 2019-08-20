@@ -6,7 +6,7 @@
 /*   By: ktrout <ktrout@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/07 08:57:22 by ktrout            #+#    #+#             */
-/*   Updated: 2019/08/20 07:14:00 by ktrout           ###   ########.fr       */
+/*   Updated: 2019/08/20 09:40:01 by ktrout           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,11 @@
 int		main(int argc, char *argv[])
 {
 	int		i;
-	int		j;
 	int		k;
 
-	if (argc > 2)
+	if (argc > 1)
 	{
 		i = 0;
-		j = 0;
 		while (argv[1][i] == ' ' || argv[1][i] == '\t')
 			i += 1;
 		k = i;
