@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_list.c                                        :+:      :+:    :+:   */
+/*   cycle_detector.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ktrout <ktrout@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/08/05 11:16:53 by ktrout            #+#    #+#             */
-/*   Updated: 2019/08/20 09:54:46 by ktrout           ###   ########.fr       */
+/*   Created: 2019/08/20 13:07:51 by ktrout            #+#    #+#             */
+/*   Updated: 2019/08/20 13:16:30 by ktrout           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "list.h"
 
-t_list	*sort_list(t_list* lst, int (*cmp)(int, int))
+int		cycle_detector(const t_list *list)
 {
-	int 	overflow;
-	t_list	*temp;
+	t_list *slow;
+	t_list *fast;
 
-	temp = lst;
-	while (lst->next != NULL)
+	slow = (t_list *)list;
+	fast = (t_list *)list->next;
+	while (fast && fast->next)
 	{
-		if(((cmp)(lst->data, lst->next->data)) == 0)
-		{
-			overflow = lst->data;
-			lst->data = lst->next->data;
-			lst->next->data = overflow;
-			lst = temp;
-		}
-		else 
-			lst = lst->next;
+		if (fast == slow)
+			return (0);
+		slow = slow->next;
+		fast = fast->next->next;
 	}
-	lst = temp;
-	return (lst);
+	return (0);
 }
