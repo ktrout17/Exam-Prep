@@ -6,7 +6,7 @@
 /*   By: ktrout <ktrout@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/20 13:07:51 by ktrout            #+#    #+#             */
-/*   Updated: 2019/08/20 13:16:30 by ktrout           ###   ########.fr       */
+/*   Updated: 2019/08/21 09:30:54 by ktrout           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		cycle_detector(const t_list *list)
 	while (fast && fast->next)
 	{
 		if (fast == slow)
-			return (0);
+			return (1);
 		slow = slow->next;
 		fast = fast->next->next;
 	}

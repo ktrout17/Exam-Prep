@@ -11,17 +11,15 @@
 /* ************************************************************************** */
 
 #include <string.h>
+#include <stdio.h>
 
 size_t	ft_strspn(const char *s, const char *accept)
 {
-	int i;
-	int j;
-
-	i = 0;
+	int i = 0;
 	while (s[i])
 	{
-		j = 0;
-		while (accept[j])
+		int j = 0;
+	   while(accept[j])
 		{
 			if (s[i] == accept[j])
 				i++;
@@ -30,4 +28,14 @@ size_t	ft_strspn(const char *s, const char *accept)
 		return(i);
 	}
 	return (i);
+}
+
+int		main(void)
+{
+	char s[] = "Kristin";
+	char accept[] = "Trout";
+	printf("%zu\n", strspn(s, accept));
+
+	printf("%zu\n", ft_strspn(s, accept));
+	return (0);
 }
