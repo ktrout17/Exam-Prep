@@ -6,7 +6,7 @@
 /*   By: ktrout <ktrout@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/20 13:19:35 by ktrout            #+#    #+#             */
-/*   Updated: 2019/08/20 13:41:03 by ktrout           ###   ########.fr       */
+/*   Updated: 2019/08/28 09:34:10 by ktrout           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int	check_brackets(char *str)
 		if (str[i] == ')' || str[i] == '}' || str[i] == ']')
 			if (!match_brackets(stack[top--], str[i]))
 				return (0);
-		i += 1;
+		i++;
 	}
 	return (!top);
 }
